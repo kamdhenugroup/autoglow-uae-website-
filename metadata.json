@@ -1,0 +1,6 @@
+{
+  "name": "AutoGlow",
+  "description": "Premium automotive detailing and surface protection specialist in UAE.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

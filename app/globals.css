@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-placeholder-from: var(--placeholder-from);
+  --color-placeholder-to: var(--placeholder-to);
+
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  
+  --animate-marquee: marquee linear infinite;
+  
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
+@layer base {
+  :root {
+    --background: #FAF8F4;
+    --foreground: #0A1A33;
+    --surface: #F3F0EA;
+    --surface-hover: #EAE6DF;
+    --muted: #6B7280;
+    --border: #E5E1D8;
+    --accent: #CD2B34;
+    --accent-hover: #A82028;
+    --placeholder-from: #EDEAE3;
+    --placeholder-to: #E0DCD3;
+  }
+
+  .dark {
+    --background: #0d0d11;
+    --foreground: #ffffff;
+    --surface: #15151a;
+    --surface-hover: #1f1f26;
+    --muted: #d1d5db;
+    --border: rgba(255, 255, 255, 0.12);
+    --accent: #e51924;
+    --accent-hover: #d51f2a;
+    --placeholder-from: #15151a;
+    --placeholder-to: #0d0d11;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-muted selection:text-background transition-colors duration-200 break-words;
+    overflow-x: hidden;
+  }
+}
+
+/* Hide Google reCAPTCHA v3 floating badge to prevent overlapping fixed UI elements */
+.grecaptcha-badge {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+

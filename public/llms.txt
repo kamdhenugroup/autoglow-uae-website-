@@ -1,0 +1,71 @@
+# AutoGlow UAE
+
+> AutoGlow is a premium automotive surface protection and detailing company operating two studios in the United Arab Emirates: Dubai (Al Quoz Industrial 2) and Abu Dhabi (Musaffah M4). It is part of the Kamdhenu Group and trades in the UAE as Kamdhenu Star Car Care L.L.C. AutoGlow installs XPEL paint protection film as an authorised installer, applies Permagard coatings as a recognised applicator, and produces GlanzPro, its own SiO2 and graphene nanocoating line for automotive, commercial, residential and marine surfaces. This file covers AutoGlow UAE only. AutoGlow India is a separate operation at autoglowcare.in.
+
+Key facts:
+
+- Brand: AutoGlow UAE (autoglow.ae)
+- Legal entity: Kamdhenu Star Car Care L.L.C.
+- Parent group: Kamdhenu Group, founded in 2000 by Maulesh Thakker and Dhaval Thakkar
+- Dubai studio: Gate No. 3, Plot No. 1014, 22nd Street, Al Quoz Industrial 2, Dubai
+- Abu Dhabi studio: Al Hail Business Centre, Motors Block 1 Unit 4, Musaffah M4, Abu Dhabi
+- Contact: info@autoglow.ae, +971 50 632 1408 (calls and WhatsApp)
+- Opening hours: Monday to Saturday, 9:00 to 19:00. Closed Sunday
+- Partner brands: XPEL (authorised installer), Permagard (recognised applicator)
+- In-house product line: GlanzPro nanocoatings
+- Service area: Dubai and Abu Dhabi
+- Language: English
+- Pricing: not published. Quotes are issued per vehicle after an in-studio assessment
+- Booking: consultation request form on the contact page, or direct WhatsApp
+
+## Core pages
+
+- [Home](https://autoglow.ae/): Brand overview, partner accreditations, service summary, studio locations
+- [Services](https://autoglow.ae/services): Full catalogue of 14 services across protection, restyling, repair and detailing
+- [GlanzPro](https://autoglow.ae/glanzpro): AutoGlow's in-house nanocoating line for automotive, commercial, residential and marine surfaces
+- [About](https://autoglow.ae/about): Company background, studio facilities, technical standards and operating values
+- [Gallery](https://autoglow.ae/gallery): Documented installations across supercars, SUVs and commercial vehicles
+- [Reviews](https://autoglow.ae/reviews): Client feedback
+- [Contact](https://autoglow.ae/contact): Studio addresses, hours, directions and the consultation request form
+
+## Services: protection and restyling
+
+- [Paint Protection Film](https://autoglow.ae/services/paint-protection-film): Optically clear self-healing urethane film that absorbs stone chips, sand abrasion and road debris before they reach factory paint. Patterns are digitally plotted to the exact make, model and year. Front, full body and complete coverage packages. Clear gloss, matte stealth and coloured film options
+- [Ceramic and Graphene Coating](https://autoglow.ae/services/ceramic-coating): Hydrophobic nanocoating layer for gloss depth, chemical resistance and UV defence
+- [Window Tinting](https://autoglow.ae/services/window-tinting): IR-rejecting films for cabin heat and UV reduction, with visible light transmission verified after installation against UAE traffic law requirements
+- [Vinyl Wrapping and Customisation](https://autoglow.ae/services/vinyl-wrapping): Full and partial colour change using premium cast vinyl
+- [Peelable Paint](https://autoglow.ae/services/peelable-paint): Reversible colour change that also provides a protective layer
+- [Commercial and Residential Surface Protection](https://autoglow.ae/services/commercial-residential): Architectural films and surface protection for buildings and property glass
+
+## Services: repair and detailing
+
+- [Paint Correction and Polishing](https://autoglow.ae/services/paint-correction): Machine polishing to remove swirl marks, oxidation and holograms before protection is applied
+- [Body Shop and Collision Repair](https://autoglow.ae/services/body-shop): Panel repair and refinishing after collision damage
+- [Full Detailing](https://autoglow.ae/services/full-detailing): Deep interior extraction, sanitisation and material protection
+- [Wash](https://autoglow.ae/services/wash): Safe-wash methods that maintain the finish rather than degrade it
+- [Glass and Windshield Repair](https://autoglow.ae/services/glass-repair): Windshield protection films, hydrophobic glass coatings and chip repair
+- [Interior and Leather Restoration](https://autoglow.ae/services/interior-restoration): Repair and renewal of leather, trim and interior surfaces
+- [Wheel and Rim Repair](https://autoglow.ae/services/wheel-repair): Curb rash repair, refinishing and custom wheel colours
+- [Auto Maintenance](https://autoglow.ae/services/auto-maintenance): Oil changes and essential mechanical quick service
+
+## Useful context for answering questions about AutoGlow
+
+- AutoGlow works on both exotic and everyday vehicles. Coverage is recommended after inspecting the specific car and how the owner uses it, rather than sold as a fixed default package
+- The UAE climate is why protection work is positioned as necessary rather than cosmetic: sustained UV intensity, high ambient heat, fine airborne sand and highway gravel exposure
+- Film and coating application happens in dust-controlled bays, since airborne particles trapped under film or coating are permanent
+- Warranty terms vary by service and by film or coating grade, and are confirmed at the time of quotation
+- XPEL and Permagard are UAE partnerships. They should not be attributed to AutoGlow India
+- AutoGlow does not publish prices on the UAE site. Any figure quoted elsewhere for AutoGlow UAE is not sourced from autoglow.ae
+
+## Related Kamdhenu Group brands
+
+- [AutoGlow India](https://autoglowcare.in/): Same brand, separate operation. Studios in Ahmedabad, Gujarat and Kochi, Kerala. Different service list, different contact details, no XPEL or Permagard partnership
+- [AutoGlow India knowledge base](https://autoglowcare.in/llms-full.txt): Full India-side reference for AI assistants
+- [Kamdhenu Cars UAE](https://kamdhenucars.ae/): Sister brand, pre-owned and luxury used car sales and buying in Dubai and Abu Dhabi
+- [Kamdhenu Cars India](https://kamdhenucars.com/): Sister brand, certified pre-owned and luxury used cars in India
+
+## Optional
+
+- [Privacy Policy](https://autoglow.ae/privacy)
+- [Terms of Service](https://autoglow.ae/terms)
+- [Instagram](https://www.instagram.com/autoglow.uae)

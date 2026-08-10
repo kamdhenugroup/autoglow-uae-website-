@@ -22,7 +22,7 @@ export default function PrivacyPage() {
             {isRtl ? "سياسة الخصوصية" : "Privacy Policy"}
           </h1>
           <p className="text-sm font-mono text-muted uppercase tracking-wider">
-            {isRtl ? "آخر تحديث: يوليو ٢٠٢٦" : "Last updated: July 2026"}
+            {isRtl ? "آخر تحديث: أغسطس ٢٠٢٦" : "Last updated: August 2026"}
           </p>
         </div>
 
@@ -30,63 +30,63 @@ export default function PrivacyPage() {
           {isRtl ? (
             <>
               <p>
-                نحن في <strong>AutoGlow</strong> نقدر خصوصيتك ونهتم بكيفية التعامل مع بياناتك الشخصية. توضح هذه السياسة كيف نقوم بجمع واستخدام وحماية معلوماتك عند زيارة موقعنا الإلكتروني أو الاستفادة من خدماتنا في دبي وأبوظبي.
+                نحن في <strong>AutoGlow</strong> (دبي وأبوظبي، دولة الإمارات العربية المتحدة) نقدر خصوصيتك ونهتم ببياناتك الشخصية. توضح سياسة الخصوصية هذه كيف نقوم بجمع، استخدام، وحماية معلوماتك الشخصية عند زيارة موقعنا الإلكتروني (autoglow.ae) أو الاستفادة من خدماتنا المتخصصة في حماية طلاء السيارات (PPF) وطلاء السيراميك والتفصيل الفاخر.
               </p>
               
               <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">١. المعلومات التي نجمعها</h2>
               <p>
-                قد نجمع معلومات شخصية تحدد هويتك، مثل الاسم، عنوان البريد الإلكتروني، رقم الهاتف، وتفاصيل السيارة، عند حجز استشارة أو التواصل معنا مباشرة.
+                نقوم بجمع المعلومات التي تقدمها لنا مباشرة عند حجز موعد، طلب استشارة، أو التواصل معنا عبر الهاتف أو البريد الإلكتروني أو قنوات التواصل الاجتماعي (مثل الاسم، رقم الهاتف، عنوان البريد الإلكتروني، ومعلومات وسيارات العميل). كما نجمع بيانات تقنية تلقائية عبر أدوات التحليل (مثل Google Analytics و Microsoft Clarity) لتحسين تجربة التصفح.
               </p>
 
-              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٢. كيف نستخدم معلوماتك</h2>
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٢. استخدام معلوماتك</h2>
               <p>
-                نستخدم البيانات التي نجمعها لتقديم وتخصيص خدماتنا، معالجة الحجوزات الخاصة بك، والتواصل معك بشأن التحديثات أو العروض الترويجية التي قد تهمك.
+                نستخدم البيانات المُجمعة للأغراض التالية: تأكيد الحجوزات وإدارتها، تقديم خدمات العناية بالسيارات وخدمة العملاء، إرسال التحديثات حول حالة سيارتك، وتحسين أداء الموقع وخدماتنا بناءً على تعليقاتك وتحليلات الاستخدام.
               </p>
 
-              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٣. حماية البيانات</h2>
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٣. ملفات تعريف الارتباط وتقنيات التتبع</h2>
               <p>
-                نحن نطبق مجموعة متنوعة من الإجراءات الأمنية للحفاظ على سلامة معلوماتك الشخصية ومنع الوصول غير المصرح به إليها.
+                يستخدم موقعنا ملفات تعريف الارتباط (Cookies) وأدوات تتبع الأداء مثل Google Analytics و Microsoft Clarity لفهم تفاعل الزوار مع المحتوى وتحسين تجربة المستخدم. يمكنك التحكم في إعدادات ملفات تعريف الارتباط أو تعطيلها مباشرة من متصفحك.
               </p>
 
-              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٤. ملفات تعريف الارتباط (Cookies)</h2>
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٤. أمن البيانات وحمايتها</h2>
               <p>
-                يستخدم موقعنا ملفات تعريف الارتباط لتحسين تجربة التصفح الخاصة بك وتحليل حركة المرور على الموقع. يمكنك اختيار إيقاف تشغيل ملفات تعريف الارتباط من خلال إعدادات متصفحك.
+                نطبق معايير أمنية تقنية وتنظيمية صارمة لحماية بياناتك الشخصية من الوصول غير المصرح به أو التغيير أو الإفصاح أو التدمير.
               </p>
 
-              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٥. الاتصال بنا</h2>
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٥. التواصل معنا</h2>
               <p>
-                إذا كان لديك أي أسئلة أو استفسارات بخصوص سياسة الخصوصية هذه، يرجى الاتصال بنا عبر البريد الإلكتروني: <a href="mailto:info@autoglow.ae" className="text-accent underline">info@autoglow.ae</a>.
+                إذا كان لديك أي أسئلة أو استفسارات حول سياسة الخصوصية الخاصة بنا، يرجى التواصل معنا عبر البريد الإلكتروني: <a href="mailto:info@autoglow.ae" className="text-accent underline">info@autoglow.ae</a> أو عبر أرقام الاتصال الرسمية في دبي (+971 50 467 0081) وأبوظبي (+971 50 632 1408).
               </p>
             </>
           ) : (
             <>
               <p>
-                At <strong>AutoGlow</strong>, we value your privacy and care about how your personal data is handled. This policy explains how we collect, use, and protect your information when you visit our website or use our premium detailing and paint protection services in Dubai and Abu Dhabi.
+                At <strong>AutoGlow</strong> (operating in Dubai and Abu Dhabi, UAE), we value your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website (autoglow.ae) or utilize our premium automotive protection, PPF, ceramic coating, and detailing services.
               </p>
 
               <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">1. Information We Collect</h2>
               <p>
-                We may collect personal identification information, such as your name, email address, phone number, and vehicle details, when you book a consultation or contact us directly.
+                We collect personal information that you provide directly to us when booking a consultation, requesting a quote, or contacting us via phone, email, or messaging channels (such as your name, phone number, email address, and vehicle make/model). We also automatically collect technical usage data through analytics platforms (such as Google Analytics and Microsoft Clarity) to optimize our website experience.
               </p>
 
               <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">2. How We Use Your Information</h2>
               <p>
-                We use the data we collect to provide and personalize our services, process your bookings, and communicate with you about updates or promotions that may interest you.
+                The information we collect is used to: schedule and manage your service bookings, deliver high-quality detailing and customer support, send important updates regarding your vehicle service status, and analyze website traffic to improve our digital and physical offerings.
               </p>
 
-              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">3. Data Protection</h2>
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">3. Cookies & Tracking Technologies</h2>
               <p>
-                We implement a variety of security measures to maintain the safety of your personal information and prevent unauthorized access.
+                Our website utilizes cookies and performance tracking tools including Google Analytics and Microsoft Clarity to understand user behavior and enhance site navigation. You can manage or disable cookies through your browser settings at any time.
               </p>
 
-              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">4. Cookies</h2>
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">4. Data Security</h2>
               <p>
-                Our website uses cookies to enhance your browsing experience and analyze site traffic. You can choose to disable cookies through your browser settings.
+                We implement robust administrative, technical, and physical security measures designed to protect your personal data against unauthorized access, alteration, disclosure, or destruction.
               </p>
 
-              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">5. Contact Us</h2>
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">5. Contact Information</h2>
               <p>
-                If you have any questions or concerns regarding this Privacy Policy, please contact us at <a href="mailto:info@autoglow.ae" className="text-accent underline">info@autoglow.ae</a>.
+                If you have any questions or concerns regarding this Privacy Policy, please contact our team at <a href="mailto:info@autoglow.ae" className="text-accent underline">info@autoglow.ae</a> or call our Dubai HQ at +971 50 467 0081 / Abu Dhabi studio at +971 50 632 1408.
               </p>
             </>
           )}

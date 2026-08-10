@@ -13,6 +13,7 @@ import { TopProgressBar } from '@/components/top-progress-bar';
 import { GrainTexture } from '@/components/ui/grain-texture';
 import { EntryLoader } from '@/components/ui/entry-loader';
 import { SoundEffects } from '@/components/sound-effects';
+import { CookieBanner } from '@/components/cookie-banner';
 import './globals.css';
 
 const inter = Inter({
@@ -198,6 +199,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
               </PageTransition>
               <Footer />
               <WhatsAppButton />
+              <CookieBanner />
             </SmoothScroll>
           </LanguageProvider>
         </ThemeProvider>

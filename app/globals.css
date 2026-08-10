@@ -29,33 +29,56 @@
   :root {
     --background: #FAF8F4;
     --foreground: #0A1A33;
-    --surface: #F3F0EA;
-    --surface-hover: #EAE6DF;
+    --surface: #F5F2EC;
+    --surface-hover: #ECE7DF;
     --muted: #6B7280;
-    --border: #E5E1D8;
+    --border: #E8E3D9;
     --accent: #CD2B34;
     --accent-hover: #A82028;
-    --placeholder-from: #EDEAE3;
-    --placeholder-to: #E0DCD3;
+    --placeholder-from: #F0ECE4;
+    --placeholder-to: #E5E1D8;
+    --glass-bg: rgba(250, 248, 244, 0.82);
+    --glass-border: rgba(10, 26, 51, 0.07);
+    --glass-shadow: 0 16px 40px -12px rgba(10, 26, 51, 0.05);
   }
 
   .dark {
-    --background: #0d0d11;
+    --background: #09090d;
     --foreground: #ffffff;
-    --surface: #15151a;
-    --surface-hover: #1f1f26;
+    --surface: #111116;
+    --surface-hover: #18181e;
     --muted: #d1d5db;
-    --border: rgba(255, 255, 255, 0.12);
+    --border: rgba(255, 255, 255, 0.07);
     --accent: #e51924;
     --accent-hover: #d51f2a;
-    --placeholder-from: #15151a;
-    --placeholder-to: #0d0d11;
+    --placeholder-from: #111116;
+    --placeholder-to: #09090d;
+    --glass-bg: rgba(9, 9, 13, 0.82);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.7);
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-muted selection:text-background transition-colors duration-200 break-words;
+    @apply bg-background text-foreground font-sans antialiased selection:bg-accent/20 selection:text-foreground transition-colors duration-300 break-words;
     overflow-x: hidden;
+    letter-spacing: -0.01em;
   }
+}
+
+/* Glassmorphism & Polished Depth Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-header {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 /* Hide Google reCAPTCHA v3 floating badge to prevent overlapping fixed UI elements */

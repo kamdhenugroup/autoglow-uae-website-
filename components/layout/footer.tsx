@@ -262,6 +262,12 @@ export function Footer() {
             </a>
           </p>
           <div className="flex items-center gap-6 text-xs text-foreground/40">
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent("open-cookie-settings"))}
+              className="hover:text-foreground transition-colors text-left"
+            >
+              Manage Cookies
+            </button>
             <Link href="/blog" className="hover:text-foreground transition-colors font-medium text-accent">Editorial Blog</Link>
             <Link href="/privacy" className="hover:text-foreground transition-colors">{t("footer.privacy")}</Link>
             <Link href="/terms" className="hover:text-foreground transition-colors">{t("footer.terms")}</Link>

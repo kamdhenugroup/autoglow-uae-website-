@@ -411,7 +411,7 @@ export function Header() {
   return (
     <>
       <header 
-        className="fixed top-0 left-0 right-0 z-50 bg-background/85 backdrop-blur-md border-b border-border transition-colors duration-200"
+        className="fixed top-0 left-0 right-0 z-50 glass-header transition-colors duration-300"
       >
       <div className="max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4 xl:gap-6 relative">
         <Link href="/" className="flex items-center shrink-0">
@@ -463,7 +463,7 @@ export function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="fixed top-20 left-1/2 -translate-x-1/2 w-[95vw] max-w-[900px] max-h-[calc(100vh-6rem)] overflow-y-auto bg-background border border-border rounded-b-lg sm:rounded-lg shadow-xl shadow-black/5 dark:shadow-none p-6 sm:p-8 z-50 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10"
+                  className="fixed top-20 left-1/2 -translate-x-1/2 w-[95vw] max-w-[900px] max-h-[calc(100vh-6rem)] overflow-y-auto glass-panel rounded-2xl shadow-2xl p-6 sm:p-8 z-50 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10"
                 >
                   {/* Column 1 */}
                   <div>

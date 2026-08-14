@@ -78,7 +78,7 @@ You cannot film the main area of the windshield. That part is not in dispute.
 
 What is regularly misreported is what is allowed at the top. In 2017, Dubai Police clarified the point after drivers in several emirates were fined AED 1,500 for windshield film: a tint strip is permitted along the top of the windshield up to **15 cm**, roughly 5.5 inches. Not a factory strip only, and not nothing at all.
 
-Anything beyond that band is a violation. Police in Umm Al Quwain have also warned that placing a heat insulator or any other item across the windshield that obstructs the driver's view while the vehicle is moving is prohibited, which covers the folding sunshade a lot of people forget to remove before pulling out of a parking bay.
+Anything beyond that band is a violation. Police in Umm Al Quwain have also warned that placing a heat insulator or any other item across the windshield that obstructs the driver's view while the vehicle is moving is prohibited, which covers the folding sunshade a total of people forget to remove before pulling out of a parking bay.
 
 ## Colour and Reflectivity
 

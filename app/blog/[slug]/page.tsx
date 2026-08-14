@@ -4,15 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Metadata } from "next";
 import { Avatar } from "@usespaceui/avatars/react";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
-
-export const dynamicParams = true;
-export const revalidate = 60;
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -174,7 +172,44 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Markdown Content */}
         <div className="markdown-body prose prose-invert max-w-none text-foreground/90 space-y-6 text-base sm:text-lg leading-relaxed">
-          <Markdown>{post.content}</Markdown>
+          <Markdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              table: ({ node, ...props }) => (
+                <div className="overflow-x-auto my-6 border border-border rounded-xl shadow-sm">
+                  <table className="w-full text-left border-collapse text-sm sm:text-base" {...props} />
+                </div>
+              ),
+              thead: ({ node, ...props }) => (
+                <thead className="bg-surface/80 text-foreground font-mono uppercase tracking-wider text-xs border-b border-border" {...props} />
+              ),
+              th: ({ node, ...props }) => (
+                <th className="px-4 py-3 font-semibold text-foreground/90 border-r border-border last:border-r-0" {...props} />
+              ),
+              td: ({ node, ...props }) => (
+                <td className="px-4 py-3 border-t border-border border-r border-border last:border-r-0 text-foreground/80" {...props} />
+              ),
+              tr: ({ node, ...props }) => (
+                <tr className="hover:bg-surface/40 transition-colors" {...props} />
+              ),
+              blockquote: ({ node, ...props }) => (
+                <blockquote className="border-l-4 border-accent pl-5 my-6 italic text-foreground/90 bg-surface/50 py-3 pr-4 rounded-r-xl" {...props} />
+              ),
+              a: ({ node, href, children, ...props }) => (
+                <a
+                  href={href}
+                  className="text-accent underline hover:text-accent-hover font-medium transition-colors"
+                  target={href?.startsWith('http') ? '_blank' : undefined}
+                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  {...props}
+                >
+                  {children}
+                </a>
+              ),
+            }}
+          >
+            {post.content}
+          </Markdown>
         </div>
 
         {/* Tags */}

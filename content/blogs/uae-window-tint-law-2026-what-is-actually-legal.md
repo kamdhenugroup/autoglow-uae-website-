@@ -194,3 +194,4 @@ No. The rule specifies black, and Abu Dhabi Police have confirmed reflective and
 8. [Ministerial Resolution No. 130 of 1997, Executive Regulation of Federal Law No. 21 of 1995](https://uaelegislation.gov.ae/en/legislations/1020/download). Articles 177 and 183.
 
 *Last reviewed 14 August 2026. Traffic regulations can be amended. For a binding answer on your specific vehicle, confirm with the traffic authority in your emirate.*
+

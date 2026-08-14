@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { Metadata } from "next";
+import { Avatar } from "@usespaceui/avatars/react";
 
 export const metadata: Metadata = {
   title: "AutoGlow Blog | Expert Automotive Detailing & PPF Insights UAE",
@@ -82,14 +83,8 @@ export default function BlogPageIndex() {
 
                     <div className="flex items-center justify-between pt-6 border-t border-border">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full overflow-hidden relative border border-border">
-                          <Image
-                            src={featuredPost.authorAvatar}
-                            alt={featuredPost.author}
-                            fill
-                            className="object-cover"
-                            referrerPolicy="no-referrer"
-                          />
+                        <div className="w-10 h-10 rounded-full overflow-hidden relative border border-border flex items-center justify-center bg-surface">
+                          <Avatar name={featuredPost.author} variant="glitch" size={40} circle={true} />
                         </div>
                         <div>
                           <div className="text-xs font-semibold">{featuredPost.author}</div>
@@ -150,7 +145,12 @@ export default function BlogPageIndex() {
                       </div>
 
                       <div className="px-6 pb-6 pt-0 flex items-center justify-between border-t border-border/60 mt-auto pt-4">
-                        <span className="text-xs font-semibold">{post.author}</span>
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-7 h-7 rounded-full overflow-hidden relative border border-border flex items-center justify-center bg-surface">
+                            <Avatar name={post.author} variant="glitch" size={28} circle={true} />
+                          </div>
+                          <span className="text-xs font-semibold">{post.author}</span>
+                        </div>
                         <span className="text-xs font-mono text-accent group-hover:translate-x-1 transition-transform flex items-center gap-1">
                           Read <Icon icon="solar:arrow-right-linear" className="w-3.5 h-3.5" />
                         </span>

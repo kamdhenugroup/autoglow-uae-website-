@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import Markdown from "react-markdown";
 import { Metadata } from "next";
+import { Avatar } from "@usespaceui/avatars/react";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -124,14 +125,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           {/* Author Box */}
           <div className="flex items-center justify-between py-4 border-y border-border mb-10">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full relative overflow-hidden border border-border">
-                <Image
-                  src={post.authorAvatar}
-                  alt={post.author}
-                  fill
-                  className="object-cover"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="w-12 h-12 rounded-full relative overflow-hidden border border-border flex items-center justify-center bg-surface">
+                <Avatar name={post.author} variant="glitch" size={48} circle={true} />
               </div>
               <div>
                 <div className="font-semibold text-sm">{post.author}</div>

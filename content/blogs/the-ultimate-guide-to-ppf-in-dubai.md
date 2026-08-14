@@ -2,7 +2,7 @@
 title: "The Ultimate Guide to Paint Protection Film (PPF) in Dubai & Abu Dhabi"
 date: "2026-08-01"
 author: "Rishi Shah"
-authorRole: "Master Detailing Specialist"
+authorRole: "Autoglow Team"
 authorAvatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
 excerpt: "Discover how XPEL Paint Protection Film protects your supercar or luxury vehicle against extreme UAE heat, UV radiation, and airborne sandstorms."
 coverImage: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop"

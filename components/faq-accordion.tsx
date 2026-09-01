@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
 
-interface FAQItem {
+export interface FAQItem {
   question: string;
   answer: string;
 }

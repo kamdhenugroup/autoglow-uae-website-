@@ -7,7 +7,7 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Metadata } from "next";
 import { Avatar } from "@usespaceui/avatars/react";
-import { FAQAccordion } from "@/components/faq-accordion";
+import { FAQAccordion, FAQItem } from "@/components/faq-accordion";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

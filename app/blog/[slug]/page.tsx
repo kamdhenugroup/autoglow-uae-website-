@@ -7,6 +7,7 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Metadata } from "next";
 import { Avatar } from "@usespaceui/avatars/react";
+import { FAQAccordion } from "@/components/faq-accordion";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -30,32 +31,107 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${post.title} | AutoGlow Blog`,
-    description: post.excerpt,
+    title: post.metaTitle || `${post.title} | AutoGlow Blog`,
+    description: post.metaDescription || post.excerpt,
     authors: [{ name: post.author }],
+    keywords: post.keywords,
+    alternates: {
+      canonical: post.canonical || `https://autoglow.ae/blog/${post.slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: post.metaTitle || post.title,
+      description: post.metaDescription || post.excerpt,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
+      url: post.canonical || `https://autoglow.ae/blog/${post.slug}`,
       images: [
         {
-          url: post.coverImage || 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop',
+          url: post.ogImage || post.coverImage || 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop',
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: post.ogImageAlt || post.title,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
-      images: [post.coverImage || 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop'],
+      title: post.metaTitle || post.title,
+      description: post.metaDescription || post.excerpt,
+      images: [post.ogImage || post.coverImage || 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop'],
     },
   };
 }
+
+
+
+const markdownComponents = {
+  table: ({ node, ...props }: any) => (
+    <div className="overflow-x-auto my-6 border border-border rounded-xl shadow-sm">
+      <table className="w-full text-left border-collapse text-sm sm:text-base" {...props} />
+    </div>
+  ),
+  thead: ({ node, ...props }: any) => (
+    <thead className="bg-surface/80 text-foreground font-mono uppercase tracking-wider text-xs border-b border-border" {...props} />
+  ),
+  th: ({ node, ...props }: any) => (
+    <th className="px-4 py-3 font-semibold text-foreground/90 border-r border-border last:border-r-0" {...props} />
+  ),
+  td: ({ node, ...props }: any) => (
+    <td className="px-4 py-3 border-t border-border border-r border-border last:border-r-0 text-foreground/80" {...props} />
+  ),
+  tr: ({ node, ...props }: any) => (
+    <tr className="hover:bg-surface/40 transition-colors" {...props} />
+  ),
+  h1: ({ node, ...props }: any) => (
+    <h1 className="font-display text-3xl sm:text-4xl font-bold mt-10 mb-6 text-foreground tracking-tight" {...props} />
+  ),
+  h2: ({ node, ...props }: any) => (
+    <h2 className="font-display text-2xl sm:text-3xl font-bold mt-10 mb-4 text-foreground tracking-tight border-b border-border/50 pb-2" {...props} />
+  ),
+  h3: ({ node, ...props }: any) => (
+    <h3 className="font-display text-xl sm:text-2xl font-semibold mt-8 mb-3 text-foreground" {...props} />
+  ),
+  h4: ({ node, ...props }: any) => (
+    <h4 className="font-display text-lg font-semibold mt-6 mb-2 text-foreground" {...props} />
+  ),
+  p: ({ node, ...props }: any) => (
+    <p className="my-4 text-foreground/90 leading-relaxed text-base sm:text-lg" {...props} />
+  ),
+  ul: ({ node, ...props }: any) => (
+    <ul className="list-disc list-inside my-4 space-y-2 text-foreground/90 pl-4" {...props} />
+  ),
+  ol: ({ node, ...props }: any) => (
+    <ol className="list-decimal list-inside my-4 space-y-2 text-foreground/90 pl-4" {...props} />
+  ),
+  li: ({ node, ...props }: any) => (
+    <li className="leading-relaxed" {...props} />
+  ),
+  blockquote: ({ node, ...props }: any) => (
+    <blockquote className="border-l-4 border-accent pl-5 my-6 italic text-foreground/90 bg-surface/50 py-3 pr-4 rounded-r-xl" {...props} />
+  ),
+  a: ({ node, href, children, ...props }: any) => (
+    <a
+      href={href}
+      className="text-accent underline hover:text-accent-hover font-medium transition-colors"
+      target={href?.startsWith('http') ? '_blank' : undefined}
+      rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+      {...props}
+    >
+      {children}
+    </a>
+  ),
+};
 
 export default async function BlogPostPage({ params }: PageProps) {
   const resolvedParams = await params;
@@ -65,7 +141,98 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const jsonLd = {
+  const jsonLd = resolvedParams.slug === 'how-to-choose-ppf-installer-dubai' ? {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://autoglow.ae/blog/how-to-choose-ppf-installer-dubai#article",
+        "headline": "How to Choose a PPF Installer in Dubai: 9 Questions That Filter the Market",
+        "description": "Nine questions that separate a serious PPF installer in Dubai from the rest. Warranty registration, DAP patterns, edge tucking, bay conditions, and the red flags.",
+        "image": "https://res.cloudinary.com/dnf24p24f/image/upload/v1785226114/Landing_page_image_iu6n8q.jpg",
+        "datePublished": "2026-08-31",
+        "dateModified": "2026-08-31",
+        "inLanguage": "en-AE",
+        "author": { "@type": "Person", "name": "Rishi Shah", "url": "https://autoglow.ae/about" },
+        "publisher": { "@id": "https://autoglow.ae/#organization" },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://autoglow.ae/blog/how-to-choose-ppf-installer-dubai"
+        },
+        "isPartOf": { "@id": "https://autoglow.ae/blog#blog" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://autoglow.ae" },
+          { "@type": "ListItem", "position": 2, "name": "Editorial", "item": "https://autoglow.ae/blog" },
+          { "@type": "ListItem", "position": 3, "name": "How to Choose a PPF Installer in Dubai" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://autoglow.ae/blog/how-to-choose-ppf-installer-dubai#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much should PPF cost in Dubai?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pricing depends on vehicle size, coverage package, film product line, and whether paint correction is required first. The material cost of premium film is broadly fixed across the market, so unusually low quotes generally reflect reduced preparation, less disassembly, or a lower tier film rather than a better deal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does PPF have to be installed by an authorised dealer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For the manufacturer warranty to be valid, yes. XPEL requires certified installation and registration of the vehicle for warranty claims to be honoured."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is computer cut PPF better than hand cut?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Computer cut patterns remove the need to run a blade on your paint and give repeatable fitment. Skilled hand trimming can produce a better edge on complex panels. The best installers use pattern cutting as the base and hand trim selectively, and will tell you exactly where."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a PPF installation take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full front package is typically a full day, and full body coverage runs across several days including disassembly, preparation, installation, and cure time. A shop offering full body in a single day is compressing something."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can PPF be removed later?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Quality film is designed to be removed without damaging factory paint, which is one reason it is favoured on vehicles where resale value matters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the PPF warranty transfer if I sell the car?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "On XPEL Ultimate Plus and Stealth, the limited warranty transfers to a subsequent owner, which is why the registration record matters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if my installer closes down?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Manufacturer coverage sits with the manufacturer, not the shop, provided the installation was registered. Workmanship coverage does not survive the shop. This is the practical reason to prioritise registration."
+            }
+          }
+        ]
+      }
+    ]
+  } : {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
@@ -85,6 +252,54 @@ export default async function BlogPostPage({ params }: PageProps) {
       },
     },
   };
+
+  const ppfFaqs: FAQItem[] = resolvedParams.slug === 'how-to-choose-ppf-installer-dubai' ? [
+    {
+      question: "How much should PPF cost in Dubai?",
+      answer: "Pricing depends on vehicle size, coverage package, film product line, and whether paint correction is required first. The material cost of premium film is broadly fixed across the market, so unusually low quotes generally reflect reduced preparation, less disassembly, or a lower tier film rather than a better deal."
+    },
+    {
+      question: "Does PPF have to be installed by an authorised dealer?",
+      answer: "For the manufacturer warranty to be valid, yes. XPEL requires certified installation and registration of the vehicle for warranty claims to be honoured."
+    },
+    {
+      question: "Is computer cut PPF better than hand cut?",
+      answer: "Computer cut patterns remove the need to run a blade on your paint and give repeatable fitment. Skilled hand trimming can produce a better edge on complex panels. The best installers use pattern cutting as the base and hand trim selectively, and will tell you exactly where."
+    },
+    {
+      question: "How long does a PPF installation take?",
+      answer: "A full front package is typically a full day, and full body coverage runs across several days including disassembly, preparation, installation, and cure time. A shop offering full body in a single day is compressing something."
+    },
+    {
+      question: "Can PPF be removed later?",
+      answer: "Yes. Quality film is designed to be removed without damaging factory paint, which is one reason it is favoured on vehicles where resale value matters."
+    },
+    {
+      question: "Does the PPF warranty transfer if I sell the car?",
+      answer: "On XPEL Ultimate Plus and Stealth, the limited warranty transfers to a subsequent owner, which is why the registration record matters."
+    },
+    {
+      question: "What happens if my installer closes down?",
+      answer: "Manufacturer coverage sits with the manufacturer, not the shop, provided the installation was registered. Workmanship coverage does not survive the shop. This is the practical reason to prioritise registration."
+    }
+  ] : [];
+
+  // Split content before FAQ if applicable
+  const faqHeadingLower = "## frequently asked questions";
+  const contentLower = post.content.toLowerCase();
+  const faqIndex = contentLower.indexOf(faqHeadingLower);
+
+  let mainContent = post.content;
+  let closingContent = "";
+
+  if (faqIndex !== -1 && resolvedParams.slug === 'how-to-choose-ppf-installer-dubai') {
+    mainContent = post.content.substring(0, faqIndex);
+    // Find where FAQ section ends (e.g. before "---")
+    const closingDividerIndex = post.content.indexOf("---", faqIndex);
+    if (closingDividerIndex !== -1) {
+      closingContent = post.content.substring(closingDividerIndex);
+    }
+  }
 
   return (
     <article className="min-h-screen bg-background text-foreground pt-28 pb-24">
@@ -174,66 +389,30 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="markdown-body prose prose-invert max-w-none text-foreground/90 space-y-6 text-base sm:text-lg leading-relaxed">
           <Markdown
             remarkPlugins={[remarkGfm]}
-            components={{
-              table: ({ node, ...props }) => (
-                <div className="overflow-x-auto my-6 border border-border rounded-xl shadow-sm">
-                  <table className="w-full text-left border-collapse text-sm sm:text-base" {...props} />
-                </div>
-              ),
-              thead: ({ node, ...props }) => (
-                <thead className="bg-surface/80 text-foreground font-mono uppercase tracking-wider text-xs border-b border-border" {...props} />
-              ),
-              th: ({ node, ...props }) => (
-                <th className="px-4 py-3 font-semibold text-foreground/90 border-r border-border last:border-r-0" {...props} />
-              ),
-              td: ({ node, ...props }) => (
-                <td className="px-4 py-3 border-t border-border border-r border-border last:border-r-0 text-foreground/80" {...props} />
-              ),
-              tr: ({ node, ...props }) => (
-                <tr className="hover:bg-surface/40 transition-colors" {...props} />
-              ),
-              h1: ({ node, ...props }) => (
-                <h1 className="font-display text-3xl sm:text-4xl font-bold mt-10 mb-6 text-foreground tracking-tight" {...props} />
-              ),
-              h2: ({ node, ...props }) => (
-                <h2 className="font-display text-2xl sm:text-3xl font-bold mt-10 mb-4 text-foreground tracking-tight border-b border-border/50 pb-2" {...props} />
-              ),
-              h3: ({ node, ...props }) => (
-                <h3 className="font-display text-xl sm:text-2xl font-semibold mt-8 mb-3 text-foreground" {...props} />
-              ),
-              h4: ({ node, ...props }) => (
-                <h4 className="font-display text-lg font-semibold mt-6 mb-2 text-foreground" {...props} />
-              ),
-              p: ({ node, ...props }) => (
-                <p className="my-4 text-foreground/90 leading-relaxed text-base sm:text-lg" {...props} />
-              ),
-              ul: ({ node, ...props }) => (
-                <ul className="list-disc list-inside my-4 space-y-2 text-foreground/90 pl-4" {...props} />
-              ),
-              ol: ({ node, ...props }) => (
-                <ol className="list-decimal list-inside my-4 space-y-2 text-foreground/90 pl-4" {...props} />
-              ),
-              li: ({ node, ...props }) => (
-                <li className="leading-relaxed" {...props} />
-              ),
-              blockquote: ({ node, ...props }) => (
-                <blockquote className="border-l-4 border-accent pl-5 my-6 italic text-foreground/90 bg-surface/50 py-3 pr-4 rounded-r-xl" {...props} />
-              ),
-              a: ({ node, href, children, ...props }) => (
-                <a
-                  href={href}
-                  className="text-accent underline hover:text-accent-hover font-medium transition-colors"
-                  target={href?.startsWith('http') ? '_blank' : undefined}
-                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  {...props}
-                >
-                  {children}
-                </a>
-              ),
-            }}
+            components={markdownComponents}
           >
-            {post.content}
+            {mainContent}
           </Markdown>
+
+          {/* Interactive FAQ Section */}
+          {ppfFaqs.length > 0 && (
+            <div className="my-12">
+              <h2 className="font-display text-2xl sm:text-3xl font-bold mb-6 text-foreground tracking-tight border-b border-border/50 pb-2">
+                Frequently Asked Questions
+              </h2>
+              <FAQAccordion items={ppfFaqs} />
+            </div>
+          )}
+
+          {/* Closing Content if any */}
+          {closingContent && (
+            <Markdown
+              remarkPlugins={[remarkGfm]}
+              components={markdownComponents}
+            >
+              {closingContent}
+            </Markdown>
+          )}
         </div>
 
         {/* Tags */}

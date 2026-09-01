@@ -17,6 +17,12 @@ export interface BlogPost {
   tags: string[];
   readingTime: string;
   content: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  canonical?: string;
+  keywords?: string[];
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -54,6 +60,12 @@ export function getAllPosts(): BlogPost[] {
         tags: data.tags || ['PPF', 'Dubai', 'Detailing'],
         readingTime: data.readingTime || readingTime,
         content,
+        metaTitle: data.metaTitle,
+        metaDescription: data.metaDescription,
+        ogImage: data.ogImage,
+        ogImageAlt: data.ogImageAlt,
+        canonical: data.canonical,
+        keywords: data.keywords,
       };
     });
 
@@ -87,6 +99,12 @@ export function getPostBySlug(slug: string): BlogPost | null {
         tags: data.tags || ['PPF', 'Dubai', 'Detailing'],
         readingTime: `${Math.ceil(wordCount / 200)} min read`,
         content,
+        metaTitle: data.metaTitle,
+        metaDescription: data.metaDescription,
+        ogImage: data.ogImage,
+        ogImageAlt: data.ogImageAlt,
+        canonical: data.canonical,
+        keywords: data.keywords,
       };
     }
 
@@ -107,6 +125,12 @@ export function getPostBySlug(slug: string): BlogPost | null {
       tags: data.tags || ['PPF', 'Dubai', 'Detailing'],
       readingTime: `${Math.ceil(wordCount / 200)} min read`,
       content,
+      metaTitle: data.metaTitle,
+      metaDescription: data.metaDescription,
+      ogImage: data.ogImage,
+      ogImageAlt: data.ogImageAlt,
+      canonical: data.canonical,
+      keywords: data.keywords,
     };
   } catch (error) {
     return null;

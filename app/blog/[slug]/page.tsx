@@ -192,6 +192,30 @@ export default async function BlogPostPage({ params }: PageProps) {
               tr: ({ node, ...props }) => (
                 <tr className="hover:bg-surface/40 transition-colors" {...props} />
               ),
+              h1: ({ node, ...props }) => (
+                <h1 className="font-display text-3xl sm:text-4xl font-bold mt-10 mb-6 text-foreground tracking-tight" {...props} />
+              ),
+              h2: ({ node, ...props }) => (
+                <h2 className="font-display text-2xl sm:text-3xl font-bold mt-10 mb-4 text-foreground tracking-tight border-b border-border/50 pb-2" {...props} />
+              ),
+              h3: ({ node, ...props }) => (
+                <h3 className="font-display text-xl sm:text-2xl font-semibold mt-8 mb-3 text-foreground" {...props} />
+              ),
+              h4: ({ node, ...props }) => (
+                <h4 className="font-display text-lg font-semibold mt-6 mb-2 text-foreground" {...props} />
+              ),
+              p: ({ node, ...props }) => (
+                <p className="my-4 text-foreground/90 leading-relaxed text-base sm:text-lg" {...props} />
+              ),
+              ul: ({ node, ...props }) => (
+                <ul className="list-disc list-inside my-4 space-y-2 text-foreground/90 pl-4" {...props} />
+              ),
+              ol: ({ node, ...props }) => (
+                <ol className="list-decimal list-inside my-4 space-y-2 text-foreground/90 pl-4" {...props} />
+              ),
+              li: ({ node, ...props }) => (
+                <li className="leading-relaxed" {...props} />
+              ),
               blockquote: ({ node, ...props }) => (
                 <blockquote className="border-l-4 border-accent pl-5 my-6 italic text-foreground/90 bg-surface/50 py-3 pr-4 rounded-r-xl" {...props} />
               ),

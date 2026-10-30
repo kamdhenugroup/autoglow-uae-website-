@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import { InstagramFacade } from "@/components/instagram-facade";
 import { YouTubeFacade } from "@/components/youtube-facade";
 
 interface GalleryItem {
@@ -12,8 +13,12 @@ interface GalleryItem {
   title: string;
   tag: string;
   category: "ppf" | "supercar" | "suv";
+  platform?: "youtube" | "instagram";
   src?: string; // Image URL for photos
+  thumbnailSrc?: string;
 }
+
+type MediaFilter = "all" | "photo" | "youtube" | "instagram";
 
 const GALLERY_DATA: GalleryItem[] = [
   // High-Res Showcase Photos
@@ -145,15 +150,142 @@ const GALLERY_DATA: GalleryItem[] = [
     tag: "Nissan Patrol / Shine",
     category: "ppf",
   },
+
+  // AutoGlow UAE Instagram Reels (unique shortcode-checked links)
+  {
+    id: "DctGAwBAUok",
+    type: "video",
+    platform: "instagram",
+    title: "Stealth Satin Matte PPF for a Land Rover Defender",
+    tag: "Defender / Stealth PPF",
+    category: "suv",
+    thumbnailSrc: "/images/instagram-reels/DctGAwBAUok.jpg",
+  },
+  {
+    id: "Db-50-JRFmp",
+    type: "video",
+    platform: "instagram",
+    title: "Land Rover Defender Paint Protection",
+    tag: "Defender / Paint Protection",
+    category: "suv",
+    thumbnailSrc: "/images/instagram-reels/Db-50-JRFmp.jpg",
+  },
+  {
+    id: "DbyIuH8xf5M",
+    type: "video",
+    platform: "instagram",
+    title: "Porsche Boxster XPEL Paint Protection Film",
+    tag: "Porsche Boxster / XPEL PPF",
+    category: "supercar",
+    thumbnailSrc: "/images/instagram-reels/DbyIuH8xf5M.jpg",
+  },
+  {
+    id: "Dbf0b5cgEnS",
+    type: "video",
+    platform: "instagram",
+    title: "ROX Adamas Black Edition with PPF",
+    tag: "ROX Adamas / PPF",
+    category: "suv",
+    thumbnailSrc: "/images/instagram-reels/Dbf0b5cgEnS.jpg",
+  },
+  {
+    id: "Dap_Eq8upbr",
+    type: "video",
+    platform: "instagram",
+    title: "Jetour G700 Satin Matte PPF",
+    tag: "Jetour G700 / Satin Matte PPF",
+    category: "suv",
+    thumbnailSrc: "/images/instagram-reels/Dap_Eq8upbr.jpg",
+  },
+  {
+    id: "DanMdmZxtli",
+    type: "video",
+    platform: "instagram",
+    title: "XPEL PPF Protection for a New Jetour G700",
+    tag: "Jetour G700 / XPEL PPF",
+    category: "suv",
+    thumbnailSrc: "/images/instagram-reels/DanMdmZxtli.jpg",
+  },
+  {
+    id: "DZ-AP87goj1",
+    type: "video",
+    platform: "instagram",
+    title: "Nissan Patrol XPEL Stealth Satin PPF",
+    tag: "Nissan Patrol / Stealth PPF",
+    category: "suv",
+    thumbnailSrc: "/images/instagram-reels/DZ-AP87goj1.jpg",
+  },
+  {
+    id: "DY9yTXsBNXm",
+    type: "video",
+    platform: "instagram",
+    title: "Nissan Matte PPF Transformation",
+    tag: "Nissan / Matte PPF",
+    category: "suv",
+    thumbnailSrc: "/images/instagram-reels/DY9yTXsBNXm.jpg",
+  },
+  {
+    id: "DYj4DA4OaX3",
+    type: "video",
+    platform: "instagram",
+    title: "Nissan Patrol Premium PPF Protection",
+    tag: "Nissan Patrol / PPF",
+    category: "suv",
+    thumbnailSrc: "/images/instagram-reels/DYj4DA4OaX3.jpg",
+  },
+  {
+    id: "DVlhFVBFdb9",
+    type: "video",
+    platform: "instagram",
+    title: "XPEL Ultimate Fusion PPF",
+    tag: "XPEL Ultimate Fusion / PPF",
+    category: "ppf",
+    thumbnailSrc: "/images/instagram-reels/DVlhFVBFdb9.jpg",
+  },
+  {
+    id: "DRTzIu9EiND",
+    type: "video",
+    platform: "instagram",
+    title: "GMC Canyon XPEL Paint Protection Film",
+    tag: "GMC Canyon / XPEL PPF",
+    category: "suv",
+    thumbnailSrc: "/images/instagram-reels/DRTzIu9EiND.jpg",
+  },
+  {
+    id: "DOGxS4cErzz",
+    type: "video",
+    platform: "instagram",
+    title: "GMC Denali Satin, Stealth or Gloss Finish",
+    tag: "GMC Denali / Finish Options",
+    category: "suv",
+    thumbnailSrc: "/images/instagram-reels/DOGxS4cErzz.jpg",
+  },
+  {
+    id: "DDze7wKvBGy",
+    type: "video",
+    platform: "instagram",
+    title: "Corvette Stingray Premium Car Wrap",
+    tag: "Corvette Stingray / Premium Wrap",
+    category: "supercar",
+    thumbnailSrc: "/images/instagram-reels/DDze7wKvBGy.jpg",
+  },
 ];
 
 export default function GalleryPage() {
-  const [mediaType, setMediaType] = useState<"all" | "photo" | "video">("all");
+  const [mediaType, setMediaType] = useState<MediaFilter>("all");
   const [categoryFilter, setCategoryFilter] = useState<"all" | "ppf" | "supercar" | "suv">("all");
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
 
+  const photoCount = GALLERY_DATA.filter((item) => item.type === "photo").length;
+  const instagramCount = GALLERY_DATA.filter((item) => item.platform === "instagram").length;
+  const youtubeCount = GALLERY_DATA.filter((item) => item.type === "video" && item.platform !== "instagram").length;
+
   const filteredItems = GALLERY_DATA.filter((item) => {
-    const matchesType = mediaType === "all" || item.type === mediaType;
+    const matchesType =
+      mediaType === "all" ||
+      (mediaType === "photo" && item.type === "photo") ||
+      (mediaType === "youtube" && item.type === "video" && item.platform !== "instagram") ||
+      (mediaType === "instagram" && item.platform === "instagram");
     const matchesCategory = categoryFilter === "all" || item.category === categoryFilter;
     return matchesType && matchesCategory;
   });
@@ -199,13 +331,14 @@ export default function GalleryPage() {
         {/* Media Type Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 mt-8 p-1.5 bg-surface border border-border rounded-2xl">
           {[
-            { key: "all", label: "All Works (17)", icon: "solar:widget-bold-duotone" },
-            { key: "photo", label: "Photos (7)", icon: "solar:camera-bold-duotone" },
-            { key: "video", label: "YouTube Shorts (10)", icon: "logos:youtube-icon" },
+            { key: "all", label: `All Works (${GALLERY_DATA.length})`, icon: "solar:widget-bold-duotone" },
+            { key: "photo", label: `Photos (${photoCount})`, icon: "solar:camera-bold-duotone" },
+            { key: "youtube", label: `YouTube Shorts (${youtubeCount})`, icon: "logos:youtube-icon" },
+            { key: "instagram", label: `Instagram Reels (${instagramCount})`, icon: "skill-icons:instagram" },
           ].map((tab) => (
             <button
               key={tab.key}
-              onClick={() => setMediaType(tab.key as any)}
+              onClick={() => setMediaType(tab.key as MediaFilter)}
               className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
                 mediaType === tab.key
                   ? "bg-foreground text-background shadow-sm"
@@ -275,11 +408,20 @@ export default function GalleryPage() {
               </div>
             ) : (
               <div className="relative w-full aspect-[9/16] bg-black/90 overflow-hidden">
-                <YouTubeFacade
-                  videoId={item.id}
-                  title={item.title}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                />
+                {item.platform === "instagram" ? (
+                  <InstagramFacade
+                    shortcode={item.id}
+                    title={item.title}
+                    thumbnailSrc={item.thumbnailSrc!}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                ) : (
+                  <YouTubeFacade
+                    videoId={item.id}
+                    title={item.title}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                )}
               </div>
             )}
 
@@ -297,13 +439,13 @@ export default function GalleryPage() {
               <div className="pt-2 border-t border-border flex items-center justify-between">
                 {item.type === "video" ? (
                   <a
-                    href={`https://www.youtube.com/shorts/${item.id}`}
+                    href={item.platform === "instagram" ? `https://www.instagram.com/reel/${item.id}/` : `https://www.youtube.com/shorts/${item.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground/80 hover:text-red-500 transition-colors"
+                    className={`inline-flex items-center gap-1.5 text-xs font-medium text-foreground/80 transition-colors ${item.platform === "instagram" ? "hover:text-pink-500" : "hover:text-red-500"}`}
                   >
-                    <Icon icon="logos:youtube-icon" className="w-3.5 h-3.5" />
-                    Watch Shorts
+                    <Icon icon={item.platform === "instagram" ? "skill-icons:instagram" : "logos:youtube-icon"} className="w-3.5 h-3.5" />
+                    {item.platform === "instagram" ? "Open on Instagram" : "Watch Shorts"}
                   </a>
                 ) : (
                   <button
@@ -416,11 +558,20 @@ export default function GalleryPage() {
               </div>
             ) : (
               <div className="relative w-full aspect-[9/16] max-w-[360px] mx-auto bg-black max-h-[60vh] flex-1 overflow-hidden">
-                <YouTubeFacade
-                  videoId={activeItem.id}
-                  title={activeItem.title}
-                  sizes="(max-width: 768px) 100vw, 360px"
-                />
+                {activeItem.platform === "instagram" ? (
+                  <InstagramFacade
+                    shortcode={activeItem.id}
+                    title={activeItem.title}
+                    thumbnailSrc={activeItem.thumbnailSrc!}
+                    sizes="(max-width: 768px) 100vw, 360px"
+                  />
+                ) : (
+                  <YouTubeFacade
+                    videoId={activeItem.id}
+                    title={activeItem.title}
+                    sizes="(max-width: 768px) 100vw, 360px"
+                  />
+                )}
               </div>
             )}
 
@@ -428,12 +579,12 @@ export default function GalleryPage() {
               <h3 className="font-semibold text-sm mb-1">{activeItem.title}</h3>
               {activeItem.type === "video" ? (
                 <a
-                  href={`https://www.youtube.com/shorts/${activeItem.id}`}
+                  href={activeItem.platform === "instagram" ? `https://www.instagram.com/reel/${activeItem.id}/` : `https://www.youtube.com/shorts/${activeItem.id}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-red-500 hover:underline font-medium"
+                  className={`inline-flex items-center gap-1.5 text-xs hover:underline font-medium ${activeItem.platform === "instagram" ? "text-pink-500" : "text-red-500"}`}
                 >
-                  Open on YouTube
+                  {activeItem.platform === "instagram" ? "Open on Instagram" : "Open on YouTube"}
                   <Icon icon="solar:export-linear" className="w-3.5 h-3.5" />
                 </a>
               ) : (

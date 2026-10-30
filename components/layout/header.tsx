@@ -415,20 +415,12 @@ export function Header() {
       >
       <div className="max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4 xl:gap-6 relative">
         <Link href="/" className="flex items-center shrink-0">
-          <Image 
-            src="https://res.cloudinary.com/dnf24p24f/image/upload/v1781864421/Auto_Glow_Logo.png" 
-            alt="AutoGlow" 
-            width={280} 
-            height={80} 
-            className="h-10 sm:h-12 xl:h-14 w-auto object-contain hidden dark:block"
-            priority
-          />
-          <Image 
-            src="https://res.cloudinary.com/dnf24p24f/image/upload/e_negate/v1781864421/Auto_Glow_Logo.png" 
-            alt="AutoGlow" 
-            width={280} 
-            height={80} 
-            className="h-10 sm:h-12 xl:h-14 w-auto object-contain block dark:hidden"
+          <Image
+            src="/images/autoglow-logo.png"
+            alt="AutoGlow Car Care Expert"
+            width={1670}
+            height={532}
+            className="h-10 sm:h-12 xl:h-14 w-auto object-contain"
             priority
           />
         </Link>
@@ -623,19 +615,12 @@ export function Header() {
               {/* Overlay Header Bar */}
               <div className="h-20 flex items-center justify-between border-b border-border/40 shrink-0">
                 <Link onClick={() => setIsOpen(false)} href="/" className="flex items-center">
-                  <Image 
-                    src="https://res.cloudinary.com/dnf24p24f/image/upload/v1781864421/Auto_Glow_Logo.png" 
-                    alt="AutoGlow" 
-                    width={240} 
-                    height={70} 
-                    className="h-11 sm:h-13 w-auto object-contain hidden dark:block"
-                  />
-                  <Image 
-                    src="https://res.cloudinary.com/dnf24p24f/image/upload/e_negate/v1781864421/Auto_Glow_Logo.png" 
-                    alt="AutoGlow" 
-                    width={240} 
-                    height={70} 
-                    className="h-11 sm:h-13 w-auto object-contain block dark:hidden"
+                  <Image
+                    src="/images/autoglow-logo.png"
+                    alt="AutoGlow Car Care Expert"
+                    width={1670}
+                    height={532}
+                    className="h-11 sm:h-[3.25rem] w-auto object-contain"
                   />
                 </Link>
                 <button 

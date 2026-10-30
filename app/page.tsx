@@ -25,7 +25,7 @@ export default function Home() {
             "url": "https://autoglow.ae", // NOTE TO OWNER: Update real URL
             "telephone": "+971506321408",
             "email": "info@autoglow.ae",
-            "logo": "https://res.cloudinary.com/dnf24p24f/image/upload/v1781864421/Auto_Glow_Logo.png",
+            "logo": "https://autoglow.ae/images/autoglow-logo.png",
             "priceRange": "$$$",
             "openingHoursSpecification": [
               {

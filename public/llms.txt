@@ -25,8 +25,13 @@ Key facts:
 - [GlanzPro](https://autoglow.ae/glanzpro): AutoGlow's in-house nanocoating line for automotive, commercial, residential and marine surfaces
 - [About](https://autoglow.ae/about): Company background, studio facilities, technical standards and operating values
 - [Gallery](https://autoglow.ae/gallery): Documented installations across supercars, SUVs and commercial vehicles
-- [Reviews](https://autoglow.ae/reviews): Client feedback
+- [Studios](https://autoglow.ae/locations): AutoGlow's two UAE studios and their service areas
+- [Dubai studio](https://autoglow.ae/locations/dubai): Al Quoz Industrial 2 address, contact, services and map
+- [Abu Dhabi studio](https://autoglow.ae/locations/abu-dhabi): Musaffah M4 address, contact, services and map
+- [Reviews](https://autoglow.ae/reviews): Google Maps review links for each studio, with on-demand review display
 - [Contact](https://autoglow.ae/contact): Studio addresses, hours, directions and the consultation request form
+- [PPF quote guide](https://autoglow.ae/blog/ppf-cost-dubai-quote-guide): Factors that affect a vehicle-specific PPF estimate
+- [PPF coverage guide](https://autoglow.ae/blog/front-package-vs-full-body-ppf-dubai): Compare front package and full-body coverage
 
 ## Services: protection and restyling
 

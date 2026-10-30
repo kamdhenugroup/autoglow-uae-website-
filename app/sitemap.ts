@@ -3,8 +3,6 @@ import { getAllPosts } from '@/lib/blogs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://autoglow.ae';
-  const currentDate = new Date().toISOString();
-
   const routes = [
     '',
     '/glanzpro',
@@ -12,6 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/gallery',
     '/reviews',
+    '/locations',
+    '/locations/dubai',
+    '/locations/abu-dhabi',
     '/services',
     '/services/paint-protection-film',
     '/services/ceramic-coating',
@@ -34,7 +35,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: currentDate,
     changeFrequency: route === '' || route === '/services' || route === '/glanzpro' || route === '/blog' ? 'weekly' : 'monthly',
     priority: route === '' ? 1.0 : route === '/glanzpro' || route.startsWith('/services') || route === '/blog' ? 0.9 : 0.8,
   }));
@@ -42,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
   const blogEntries: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.date ? new Date(post.date).toISOString() : currentDate,
+    ...(post.updatedAt || post.date ? { lastModified: new Date(post.updatedAt || post.date).toISOString() } : {}),
     changeFrequency: 'weekly',
     priority: 0.85,
   }));

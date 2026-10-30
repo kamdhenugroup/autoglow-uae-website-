@@ -184,6 +184,7 @@ export function Footer() {
                       <>Gate No.3 - Plot No. 1014 22nd St<br />Al Qouz Ind. 2 - Dubai, UAE</>
                     )}
                   </a>
+                  <Link href="/locations/dubai" className="mt-2 inline-flex text-xs text-accent underline underline-offset-4">{language === "ar" ? "تفاصيل استوديو دبي" : "Dubai studio details"}</Link>
                 </div>
                 <div>
                   <h4 className="font-medium text-foreground mb-2">{t({ en: "Abu Dhabi", ar: "أبوظبي" })}</h4>
@@ -199,6 +200,7 @@ export function Footer() {
                       <>Al Hail Business Centre, Motors - Block-1 Unit-4<br />Musaffah - M4 - Abu Dhabi, UAE</>
                     )}
                   </a>
+                  <Link href="/locations/abu-dhabi" className="mt-2 inline-flex text-xs text-accent underline underline-offset-4">{language === "ar" ? "تفاصيل استوديو أبوظبي" : "Abu Dhabi studio details"}</Link>
                 </div>
                 <div>
                   <h4 className="font-medium text-foreground mb-1">{t({ en: "Hours", ar: "ساعات العمل" })}</h4>

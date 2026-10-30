@@ -69,28 +69,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  icons: {
-    icon: [
-      {
-        url: 'https://res.cloudinary.com/dnf24p24f/image/upload/v1781864421/Auto_Glow_Logo.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: 'https://res.cloudinary.com/dnf24p24f/image/upload/e_negate/v1781864421/Auto_Glow_Logo.png',
-        media: '(prefers-color-scheme: light)',
-      }
-    ],
-    shortcut: [
-      {
-        url: 'https://res.cloudinary.com/dnf24p24f/image/upload/v1781864421/Auto_Glow_Logo.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: 'https://res.cloudinary.com/dnf24p24f/image/upload/e_negate/v1781864421/Auto_Glow_Logo.png',
-        media: '(prefers-color-scheme: light)',
-      }
-    ],
-  },
   openGraph: {
     type: 'website',
     locale: 'en_AE',
@@ -100,9 +78,9 @@ export const metadata: Metadata = {
     description: 'Precision auto detailing, XPEL PPF, Permagard ceramic coatings, and GlanzPro surface protection in Dubai & Abu Dhabi.',
     images: [
       {
-        url: 'https://res.cloudinary.com/dnf24p24f/image/upload/v1781864421/Auto_Glow_Logo.png',
-        width: 1200,
-        height: 630,
+        url: '/images/autoglow-logo.png',
+        width: 1670,
+        height: 532,
         alt: 'AutoGlow Premium Surface Protection UAE',
       }
     ]
@@ -111,7 +89,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AutoGlow | Premium Paint Protection & Detailing UAE',
     description: 'XPEL PPF, Permagard Ceramic Coatings, GlanzPro Nanotechnology & Luxury Detailing in Dubai & Abu Dhabi.',
-    images: ['https://res.cloudinary.com/dnf24p24f/image/upload/v1781864421/Auto_Glow_Logo.png'],
+    images: ['/images/autoglow-logo.png'],
   }
 };
 
@@ -119,7 +97,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'AutoRepair',
   'name': 'AutoGlow Car Care Expert',
-  'image': 'https://res.cloudinary.com/dnf24p24f/image/upload/v1781864421/Auto_Glow_Logo.png',
+  'image': 'https://autoglow.ae/images/autoglow-logo.png',
   'url': 'https://autoglow.ae',
   'email': 'info@autoglow.ae',
   'telephone': '+971506321408',

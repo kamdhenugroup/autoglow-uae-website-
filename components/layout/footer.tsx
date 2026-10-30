@@ -26,19 +26,12 @@ export function Footer() {
           {/* Brand & Contact (1/3) */}
           <div className="w-full lg:w-1/3 flex flex-col gap-6">
             <Link href="/" className="inline-block">
-              <Image 
-                src="https://res.cloudinary.com/dnf24p24f/image/upload/v1781864421/Auto_Glow_Logo.png" 
-                alt="AutoGlow" 
-                width={200} 
-                height={60} 
-                className="h-14 w-auto object-contain hidden dark:block"
-              />
-              <Image 
-                src="https://res.cloudinary.com/dnf24p24f/image/upload/e_negate/v1781864421/Auto_Glow_Logo.png" 
-                alt="AutoGlow" 
-                width={200} 
-                height={60} 
-                className="h-14 w-auto object-contain block dark:hidden"
+              <Image
+                src="/images/autoglow-logo.png"
+                alt="AutoGlow Car Care Expert"
+                width={1670}
+                height={532}
+                className="h-14 w-auto object-contain"
               />
             </Link>
             <p className="text-sm text-foreground/60 leading-relaxed max-w-xs">

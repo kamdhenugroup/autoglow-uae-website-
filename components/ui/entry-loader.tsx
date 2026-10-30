@@ -74,10 +74,10 @@ export function EntryLoader() {
               className="relative z-10 flex items-center justify-center pt-1"
             >
               <Image
-                src="https://res.cloudinary.com/dnf24p24f/image/upload/v1781864421/Auto_Glow_Logo.png"
-                alt="AutoGlow"
-                width={200}
-                height={55}
+                src="/images/autoglow-logo.png"
+                alt="AutoGlow Car Care Expert"
+                width={1670}
+                height={532}
                 className="h-9 md:h-11 w-auto object-contain filter drop-shadow-md"
                 priority
               />

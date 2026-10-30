@@ -248,7 +248,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       name: "AutoGlow UAE",
       logo: {
         "@type": "ImageObject",
-        url: "https://autoglow.ae/logo.png",
+        url: "https://autoglow.ae/images/autoglow-logo.png",
       },
     },
   };

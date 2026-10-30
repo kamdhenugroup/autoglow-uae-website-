@@ -278,10 +278,12 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl pointer-events-none" />
               <div>
                 <div className="flex items-center justify-between gap-4 mb-6 pb-6 border-b border-zinc-800">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src="https://qrzyehvzqaymtvxa.public.blob.vercel-storage.com/Glanz_Pro.png"
                     alt="GlanzPro"
+                    width={400}
+                    height={120}
+                    sizes="(max-width: 640px) 48vw, 240px"
                     className="h-12 sm:h-16 w-auto object-contain"
                   />
                   <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-300 uppercase tracking-wider font-semibold">

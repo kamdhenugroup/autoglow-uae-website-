@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { DeferredMap } from "@/components/deferred-map";
 
 type Studio = {
   title: string;
@@ -61,7 +62,13 @@ export function LocationPage({ studio }: { studio: Studio }) {
           </div>
 
           <section className="overflow-hidden rounded-2xl border border-border bg-surface" aria-label={`${studio.area} location map`}>
-            <iframe title={`AutoGlow ${studio.area} map`} src={studio.mapEmbedUrl} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" className="h-[360px] w-full border-0 grayscale contrast-125 dark:invert dark:hue-rotate-180 sm:h-[430px]" allowFullScreen />
+            <DeferredMap
+              title={`AutoGlow ${studio.area} map`}
+              address={studio.address}
+              src={studio.mapEmbedUrl}
+              directionsUrl={studio.mapUrl}
+              heightClassName="h-[360px] sm:h-[430px]"
+            />
           </section>
         </div>
 

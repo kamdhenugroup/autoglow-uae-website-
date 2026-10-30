@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
@@ -20,10 +21,12 @@ export default function GlanzProPage() {
             
             {/* GlanzPro Logo Header */}
             <div className="flex items-center justify-center gap-4 sm:gap-6 mb-8 px-8 py-6 rounded-2xl bg-black border border-zinc-800 shadow-2xl backdrop-blur-md" dir="ltr" style={{ direction: 'ltr' }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
+              <Image
                 src="https://qrzyehvzqaymtvxa.public.blob.vercel-storage.com/Glanz_Pro.png" 
                 alt="GlanzPro Logo" 
+                width={480}
+                height={160}
+                sizes="(max-width: 640px) 60vw, 320px"
                 className="h-24 sm:h-32 md:h-40 w-auto object-contain" 
               />
             </div>

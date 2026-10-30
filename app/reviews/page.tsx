@@ -50,7 +50,7 @@ export default function ReviewsPage() {
           Reviews from our Dubai and Abu Dhabi studios
         </h1>
         <p className="mb-12 max-w-2xl text-base leading-relaxed text-foreground/65 sm:text-lg">
-          Read customer feedback for each studio from its Google Maps listing. Reviews open on Google, where you can see the original author and full context.
+          Browse customer feedback for each studio on Google Maps. Each link opens the original listing with its latest reviews and ratings.
         </p>
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -65,13 +65,13 @@ export default function ReviewsPage() {
               </div>
               <p className="mb-7 flex-1 text-sm leading-relaxed text-foreground/65">{studio.address}</p>
               <Link href={studio.detailsUrl} className="mb-1 text-sm font-medium text-accent underline underline-offset-4">Studio details and services</Link>
-              <GoogleReviews location={studio.location} mapsUrl={studio.mapsUrl} />
+              <GoogleReviews mapsUrl={studio.mapsUrl} />
             </section>
           ))}
         </div>
 
         <p className="mt-7 text-xs leading-relaxed text-foreground/45">
-          Review content and author attribution are provided by Google Maps. Use the link on each review to open its original source.
+          Review content, ratings and author details are shown on Google Maps at the original source.
         </p>
       </div>
     </main>

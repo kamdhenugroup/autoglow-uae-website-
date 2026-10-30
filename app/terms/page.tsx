@@ -22,7 +22,7 @@ export default function TermsPage() {
             {isRtl ? "شروط الخدمة" : "Terms of Service"}
           </h1>
           <p className="text-sm font-mono text-muted uppercase tracking-wider">
-            {isRtl ? "آخر تحديث: أغسطس ٢٠٢٦" : "Last updated: August 2026"}
+            {isRtl ? "آخر تحديث: أكتوبر ٢٠٢٦" : "Last updated: October 2026"}
           </p>
         </div>
 
@@ -57,6 +57,11 @@ export default function TermsPage() {
               <p>
                 تخضع هذه الشروط والأحكام وتُفسر وفقاً لتشريعات وقوانين إمارة دبي ودولة الإمارات العربية المتحدة. تختص محاكم دبي حصراً بالفصل في أي نزاع ينشأ عن استخدام خدماتنا أو موقعنا.
               </p>
+
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٦. خدمات خرائط Google</h2>
+              <p>
+                تخضع خدمات Google Maps Platform المعروضة على هذا الموقع لشروط <a href="https://cloud.google.com/maps-platform/terms" target="_blank" rel="noopener noreferrer" className="text-accent underline">Google Maps Platform</a> وسياسة <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-accent underline">خصوصية Google</a>.
+              </p>
             </>
           ) : (
             <>
@@ -87,6 +92,11 @@ export default function TermsPage() {
               <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">5. Governing Law</h2>
               <p>
                 These Terms of Service are governed by and construed in accordance with the laws of the Emirate of Dubai and the United Arab Emirates. Any disputes arising herefrom shall be subject to the exclusive jurisdiction of the Dubai Courts.
+              </p>
+
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">6. Google Maps services</h2>
+              <p>
+                Google Maps Platform services displayed on this website are subject to the <a href="https://cloud.google.com/maps-platform/terms" target="_blank" rel="noopener noreferrer" className="text-accent underline">Google Maps Platform Terms of Service</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-accent underline">Google Privacy Policy</a>.
               </p>
             </>
           )}

@@ -377,7 +377,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="relative h-[380px] sm:h-[480px] rounded-3xl overflow-hidden mb-12 border border-border shadow-2xl">
           <Image
             src={post.coverImage}
-            alt={post.title}
+            alt={post.ogImageAlt || post.title}
             fill
             priority
             className="object-cover"

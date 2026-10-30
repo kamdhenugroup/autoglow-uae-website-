@@ -8,6 +8,7 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  updatedAt?: string;
   author: string;
   authorRole: string;
   authorAvatar: string;
@@ -51,6 +52,7 @@ export function getAllPosts(): BlogPost[] {
         slug,
         title: data.title || 'Untitled Post',
         date: data.date || new Date().toISOString().split('T')[0],
+        updatedAt: data.updatedAt,
         author: data.author || 'AutoGlow Editorial Team',
         authorRole: data.authorRole || 'Autoglow Team',
         authorAvatar: data.authorAvatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop',
@@ -90,6 +92,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
         slug: realSlug,
         title: data.title || 'Untitled Post',
         date: data.date || new Date().toISOString().split('T')[0],
+        updatedAt: data.updatedAt,
         author: data.author || 'AutoGlow Editorial Team',
         authorRole: data.authorRole || 'Autoglow Team',
         authorAvatar: data.authorAvatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop',
@@ -116,6 +119,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
       slug: realSlug,
       title: data.title || 'Untitled Post',
       date: data.date || new Date().toISOString().split('T')[0],
+      updatedAt: data.updatedAt,
       author: data.author || 'AutoGlow Editorial Team',
       authorRole: data.authorRole || 'Autoglow Team',
       authorAvatar: data.authorAvatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop',

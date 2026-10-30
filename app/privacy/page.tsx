@@ -22,7 +22,7 @@ export default function PrivacyPage() {
             {isRtl ? "سياسة الخصوصية" : "Privacy Policy"}
           </h1>
           <p className="text-sm font-mono text-muted uppercase tracking-wider">
-            {isRtl ? "آخر تحديث: أغسطس ٢٠٢٦" : "Last updated: August 2026"}
+            {isRtl ? "آخر تحديث: أكتوبر ٢٠٢٦" : "Last updated: October 2026"}
           </p>
         </div>
 
@@ -53,7 +53,12 @@ export default function PrivacyPage() {
                 نطبق معايير أمنية تقنية وتنظيمية صارمة لحماية بياناتك الشخصية من الوصول غير المصرح به أو التغيير أو الإفصاح أو التدمير.
               </p>
 
-              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٥. التواصل معنا</h2>
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٥. محتوى خرائط Google</h2>
+              <p>
+                قد نعرض معلومات التقييمات من خلال Google Maps Platform. يخضع استخدام خدمات Google Maps لشروط <a href="https://cloud.google.com/maps-platform/terms" target="_blank" rel="noopener noreferrer" className="text-accent underline">Google Maps Platform</a> وسياسة <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-accent underline">خصوصية Google</a>.
+              </p>
+
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">٦. التواصل معنا</h2>
               <p>
                 إذا كان لديك أي أسئلة أو استفسارات حول سياسة الخصوصية الخاصة بنا، يرجى التواصل معنا عبر البريد الإلكتروني: <a href="mailto:info@autoglow.ae" className="text-accent underline">info@autoglow.ae</a> أو عبر أرقام الاتصال الرسمية في دبي (+971 50 467 0081) وأبوظبي (+971 50 632 1408).
               </p>
@@ -84,7 +89,12 @@ export default function PrivacyPage() {
                 We implement robust administrative, technical, and physical security measures designed to protect your personal data against unauthorized access, alteration, disclosure, or destruction.
               </p>
 
-              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">5. Contact Information</h2>
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">5. Google Maps content</h2>
+              <p>
+                We may display review information through Google Maps Platform. Use of Google Maps services is subject to the <a href="https://cloud.google.com/maps-platform/terms" target="_blank" rel="noopener noreferrer" className="text-accent underline">Google Maps Platform Terms of Service</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-accent underline">Google Privacy Policy</a>.
+              </p>
+
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-4">6. Contact Information</h2>
               <p>
                 If you have any questions or concerns regarding this Privacy Policy, please contact our team at <a href="mailto:info@autoglow.ae" className="text-accent underline">info@autoglow.ae</a> or call our Dubai HQ at +971 50 467 0081 / Abu Dhabi studio at +971 50 632 1408.
               </p>

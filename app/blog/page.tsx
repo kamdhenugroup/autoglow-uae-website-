@@ -53,7 +53,7 @@ export default function BlogPageIndex() {
                   <div className="lg:col-span-7 relative min-h-[320px] lg:min-h-[420px] overflow-hidden">
                     <Image
                       src={featuredPost.coverImage}
-                      alt={featuredPost.title}
+                      alt={featuredPost.ogImageAlt || featuredPost.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       referrerPolicy="no-referrer"
@@ -118,7 +118,7 @@ export default function BlogPageIndex() {
                         <div className="relative h-52 overflow-hidden">
                           <Image
                             src={post.coverImage}
-                            alt={post.title}
+                            alt={post.ogImageAlt || post.title}
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                             referrerPolicy="no-referrer"

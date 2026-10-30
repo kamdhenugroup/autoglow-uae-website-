@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@iconify/react";
+import { YouTubeFacade } from "@/components/youtube-facade";
 
 interface GalleryItem {
   id: string;
@@ -252,11 +254,12 @@ export default function GalleryPage() {
                 onClick={() => setActiveItem(item)}
                 className="relative w-full aspect-[4/3] bg-black/90 overflow-hidden cursor-pointer"
               >
-                <img
-                  src={item.src}
+                <Image
+                  src={item.src!}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-white text-xs font-mono">
@@ -272,13 +275,10 @@ export default function GalleryPage() {
               </div>
             ) : (
               <div className="relative w-full aspect-[9/16] bg-black/90 overflow-hidden">
-                <iframe
-                  src={`https://www.youtube.com/embed/${item.id}?rel=0&modestbranding=1`}
+                <YouTubeFacade
+                  videoId={item.id}
                   title={item.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full border-0"
-                  loading="lazy"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
             )}
@@ -405,20 +405,21 @@ export default function GalleryPage() {
             {/* Media Content */}
             {activeItem.type === "photo" ? (
               <div className="relative w-full bg-black max-h-[65vh] flex items-center justify-center overflow-hidden">
-                <img
-                  src={activeItem.src}
+                <Image
+                  src={activeItem.src!}
                   alt={activeItem.title}
-                  className="w-full h-auto max-h-[65vh] object-contain"
+                  width={1200}
+                  height={900}
+                  sizes="(max-width: 768px) 100vw, 672px"
+                  className="h-auto max-h-[65vh] w-full object-contain"
                 />
               </div>
             ) : (
               <div className="relative w-full aspect-[9/16] max-w-[360px] mx-auto bg-black max-h-[60vh] flex-1 overflow-hidden">
-                <iframe
-                  src={`https://www.youtube.com/embed/${activeItem.id}?autoplay=1&rel=0`}
+                <YouTubeFacade
+                  videoId={activeItem.id}
                   title={activeItem.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full border-0"
+                  sizes="(max-width: 768px) 100vw, 360px"
                 />
               </div>
             )}

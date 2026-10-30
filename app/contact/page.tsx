@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
+import { DeferredMap } from "@/components/deferred-map";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { playSound } from "@/lib/sounds";
 
@@ -471,7 +472,7 @@ export default function ContactPage() {
               </h2>
             </div>
             <p className="text-sm text-foreground/70 max-w-md">
-              Custom map embed section ready for your Google Maps iframe code or interactive component.
+              See each studio address first, then load its interactive map or open directions in Google Maps.
             </p>
           </div>
 
@@ -495,17 +496,12 @@ export default function ContactPage() {
                   <span>Get Directions</span>
                 </a>
               </div>
-              {/* Map embed area: 100% width, height 400px */}
-              <div className="w-full h-[400px] bg-zinc-900 border-t border-border overflow-hidden">
-                <iframe
-                  title="AUTOGLOW Dubai HQ Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3823.4580407507!2d55.253061998384524!3d25.141521400000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6908d6b071d9%3A0x670999a6b8b21745!2sAutoglow%20UAE!5e1!3m2!1sen!2sin!4v1784717084391!5m2!1sen!2sin"
-                  className="w-full h-full border-0 grayscale contrast-125 dark:invert dark:hue-rotate-180 opacity-90 hover:opacity-100 transition-opacity duration-300"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                />
-              </div>
+              <DeferredMap
+                title="AUTOGLOW Dubai HQ Map"
+                address="Gate No. 3, Plot 1014, 22nd Street, Al Quoz Industrial 2, Dubai"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3823.4580407507!2d55.253061998384524!3d25.141521400000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6908d6b071d9%3A0x670999a6b8b21745!2sAutoglow%20UAE!5e1!3m2!1sen!2sin!4v1784717084391!5m2!1sen!2sin"
+                directionsUrl="https://maps.app.goo.gl/jysz6nVVBeTLsmz56"
+              />
             </div>
 
             {/* Abu Dhabi Map Container Slot */}
@@ -527,17 +523,12 @@ export default function ContactPage() {
                   <span>Get Directions</span>
                 </a>
               </div>
-              {/* Map embed area: 100% width, height 400px */}
-              <div className="w-full h-[400px] bg-zinc-900 border-t border-border overflow-hidden">
-                <iframe
-                  title="AUTOGLOW Abu Dhabi Studio Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.388994637587!2d54.514753382800265!3d24.36620530880771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e417875433bef%3A0x9967c984a32e9ae6!2sAutoGlow%20Abu%20Dhabi!5e1!3m2!1sen!2sin!4v1784717136602!5m2!1sen!2sin"
-                  className="w-full h-full border-0 grayscale contrast-125 dark:invert dark:hue-rotate-180 opacity-90 hover:opacity-100 transition-opacity duration-300"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                />
-              </div>
+              <DeferredMap
+                title="AUTOGLOW Abu Dhabi Studio Map"
+                address="Al Hail Business Centre, Motors, Block 1, Unit 4, Musaffah M4, Abu Dhabi"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.388994637587!2d54.514753382800265!3d24.36620530880771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e417875433bef%3A0x9967c984a32e9ae6!2sAutoGlow%20Abu%20Dhabi!5e1!3m2!1sen!2sin!4v1784717136602!5m2!1sen!2sin"
+                directionsUrl="https://maps.app.goo.gl/MCGKfErJ2KsjaRbr5"
+              />
             </div>
           </div>
         </div>

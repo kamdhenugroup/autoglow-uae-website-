@@ -89,10 +89,12 @@ export function Footer() {
                 </h4>
                 <div className="flex flex-wrap items-center gap-3" dir="ltr" style={{ direction: 'ltr' }}>
                   <Link href="/glanzpro" className="flex items-center gap-3.5 px-5 py-3 rounded-2xl bg-zinc-950 dark:bg-zinc-900 border border-purple-500/40 hover:border-purple-500/80 transition-colors shadow-md select-none group" dir="ltr" style={{ direction: 'ltr' }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
+                    <Image
                       src="https://qrzyehvzqaymtvxa.public.blob.vercel-storage.com/Glanz_Pro.png" 
                       alt="GlanzPro" 
+                      width={400}
+                      height={120}
+                      sizes="(max-width: 640px) 48vw, 240px"
                       className="h-12 sm:h-16 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform" 
                     />
                     <span className="text-xs font-mono text-purple-400 uppercase tracking-wider pl-3 border-l border-zinc-700/80 font-bold" dir="ltr">COATINGS</span>
